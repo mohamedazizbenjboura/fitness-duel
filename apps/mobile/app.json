@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "Fitness Duel",
+    "slug": "fitness-duel",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#667eea"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.fitnessduel.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app needs camera access to record your workout during duels.",
+        "NSMicrophoneUsageDescription": "This app needs microphone access for voice chat during matches."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#667eea"
+      },
+      "package": "com.fitnessduel.app",
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "INTERNET"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Fitness Duel to access your camera for workout recording."
+        }
+      ]
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "buildCommand": "cd ../.. && npm run build:shared && cd apps/web && npm run build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "env": {
+    "NEXT_PUBLIC_API_URL": "https://your-backend.railway.app"
+  }
+}

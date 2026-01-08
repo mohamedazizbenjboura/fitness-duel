@@ -1,0 +1,27 @@
+{
+  "name": "fitness-duel-monorepo",
+  "version": "1.0.0",
+  "description": "1v1 Live Fitness Duel Platform - Web & Mobile",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:web\"",
+    "dev:backend": "npm run dev --workspace=apps/backend",
+    "dev:web": "npm run dev --workspace=apps/web",
+    "dev:mobile": "npm run start --workspace=apps/mobile",
+    "build": "npm run build --workspaces",
+    "install:all": "npm install && npm run install:mobile",
+    "install:mobile": "cd apps/mobile && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

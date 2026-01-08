@@ -1,0 +1,40 @@
+name: Deploy Fitness Duel
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: |
+          npm install
+          cd packages/shared && npm install
+          cd ../../apps/backend && npm install
+          cd ../web && npm install
+          
+      - name: Build shared package
+        run: |
+          cd packages/shared
+          npm run build
+          
+      - name: Build backend
+        run: |
+          cd apps/backend
+          npm run build || echo "No build script"
+          
+      - name: Build web
+        run: |
+          cd apps/web
+          npm run build
