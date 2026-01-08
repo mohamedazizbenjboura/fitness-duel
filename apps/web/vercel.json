@@ -1,8 +1,7 @@
 {
-  "buildCommand": "cd ../.. && npm run build:shared && cd apps/web && npm run build",
+  "buildCommand": "cd ../.. && npm install && npm run build --workspace=@fitness-duel/shared && cd apps/web && npm install && npx next build",
   "outputDirectory": ".next",
-  "framework": "nextjs",
-  "installCommand": "cd ../.. && npm install",
+  "framework": null,
   "env": {
     "NEXT_PUBLIC_API_URL": "https://fitness-duelbackend-production.up.railway.app"
   }
