@@ -4,6 +4,9 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const dynamic = 'force-dynamic';
+export const dynamicParams = true;
+
 export const metadata: Metadata = {
   title: "Fitness Duel - 1v1 Live Competition",
   description: "Compete in real-time fitness duels with opponents worldwide",
