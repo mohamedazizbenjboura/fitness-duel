@@ -12,7 +12,9 @@
     "dev:backend": "npm run dev --workspace=apps/backend",
     "dev:web": "npm run dev --workspace=apps/web",
     "dev:mobile": "npm run start --workspace=apps/mobile",
-    "build": "npm run build --workspaces",
+    "build": "npm run build --workspace=@fitness-duel/shared && npm run build --workspace=@fitness-duel/backend && npm run build --workspace=@fitness-duel/web",
+    "build:backend": "npm run build --workspace=@fitness-duel/shared && npm run build --workspace=@fitness-duel/backend",
+    "build:web": "npm run build --workspace=@fitness-duel/shared && npm run build --workspace=@fitness-duel/web",
     "install:all": "npm install && npm run install:mobile",
     "install:mobile": "cd apps/mobile && npm install"
   },
