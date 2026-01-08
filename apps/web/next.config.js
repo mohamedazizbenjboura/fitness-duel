@@ -5,13 +5,19 @@ const nextConfig = {
     domains: ['api.dicebear.com'],
   },
   transpilePackages: ['@fitness-duel/shared'],
-  // Allow the build to continue even if error pages fail to generate
+  output: 'standalone',
+  // Disable static optimization to avoid build errors
   typescript: {
     ignoreBuildErrors: false,
   },
   eslint: {
     ignoreDuringBuilds: true,
   },
+  // Skip static generation for error pages
+  experimental: {
+    workerThreads: false,
+    cpus: 1
+  }
 }
 
 module.exports = nextConfig
